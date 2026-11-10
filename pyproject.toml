@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "em-segmentation"
+version = "0.1.0"
+description = "EM for Gaussian mixtures, applied to brain-MRI tissue segmentation"
+readme = "README.md"
+authors = [{ name = "Mohamed Kassoul" }]
+requires-python = ">=3.10"
+dependencies = ["numpy", "matplotlib", "nibabel"]
+
+[project.optional-dependencies]
+dev = ["pytest", "jupyter"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
